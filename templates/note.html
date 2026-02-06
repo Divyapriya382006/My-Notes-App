@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>No Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="top" >
+        <div class="leftu">
+            <h1>My Notes</h1>
+        </div>
+        <div class="rightu">
+            <ul>
+                <li><a href="{{url_for('inputpg')}}">Write</a></li>
+                <li><a href="{{url_for('contentspg')}}">Read</a></li>
+                </ul>
+        </div>
+       </div> 
+
+<div class="bodycontu">
+    
+            <h1><b>{{ notes.Name }}</b></h1>
+
+<div class="subdiv">
+    <h2><b>{{ notes.Category }}</b></h2>
+    <h2><b>{{ notes.Date }}</b></h2>
+</div>
+<pre style="word-wrap: wrap;">
+<p style="border:1px solid white;padding:10px;margin:30px;word-wrap: wrap;text-wrap: wrap;font-size: 20px;background-color: white;color:black;border-radius: 10px;">{{ notes.Content }}</p></pre>
+
+        
+        
+</div>
+
+</body>
+</html>

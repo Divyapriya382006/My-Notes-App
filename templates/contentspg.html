@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>No Login</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    </head>
+    <body>
+        <div class="top" >
+        <div class="leftu">
+            <h1>My Notes</h1>
+        </div>
+        <div class="rightu">
+            <ul>
+                <li><a href="{{url_for('inputpg')}}">Write</a></li>
+                <li><a href="{{url_for('contentspg')}}">Read</a></li>
+                </ul>
+        </div>
+       </div> 
+
+       <div class="bodycont">
+         <div class="notesgrid">
+             {% if notes %}
+             {% for i in notes %}
+             <div class="gridbox">
+                <h3>{{i.Name}}</h3>
+                <div class="subdiv">
+                    <p>{{i.Category}}</p>
+                    <p>{{i.Date}}</p>
+                </div>
+                <a  style="border:1px solid white;border-radius: 10px; height:30px;width:40px;align-items: center;justify-content: center;" href="{{url_for('note',note_id=i.id)}}" class="btn">Open</a>
+             </div>
+             {% endfor %}
+             {% endif %}
+         </div>
+       </div>
+    </body>
+</html>
